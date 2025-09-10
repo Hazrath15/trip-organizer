@@ -1,0 +1,274 @@
+.team-archive {
+    .top-area {
+        display: flex;
+        gap: 24px;
+        .left-button {
+            max-width: calc(100% - 149px);
+            width: 100%;
+        }
+        .filter-tab {
+            padding: 0;
+            button {
+                padding: 16px 24px;
+                margin: 0;
+                font-size: 16px;
+                line-height: 1.2;
+                font-weight: 600;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .trip-image {
+        position: relative;
+        br {
+            display: none;
+        }
+    }
+    .trip-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+    }
+    .trip-meta-area {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: rgba(0,0,0,0.6);
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 14px;
+        border-radius: 4px;
+    }
+
+    .trip-meta-area {
+        p {
+            color: #fff;
+            font-size: 11px;
+            line-height: 1.2;
+            font-weight: 600;
+            margin-bottom: 8px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    .trip-content-area {
+        padding: 15px 0;
+    }
+    .trip-title {
+        font-size: 22px;
+        margin-bottom: 8px;
+    }
+    .trip-excerpt {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    .read-more-btn {
+        display: block;
+        text-decoration: none;
+        color: var(--zo-theme-primary);
+        text-align: end;
+    }
+}
+
+/* Modal background */
+.filter-modal {
+  display: none;
+  position: fixed;
+  top: 0; right: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+}
+
+/* Sidebar content */
+.filter-modal-content {
+  background: #fff;
+  width: 380px;
+  max-width: 90%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 32px 20px;
+  overflow-y: auto;
+  box-shadow: -3px 0 10px rgba(0,0,0,0.2);
+  animation: slideIn .3s ease-out;
+  
+  .noUi-connect {
+    height: 2px;
+    background: var(--zo-theme-primary);
+  }
+  .noUi-horizontal {
+    height: 4px;
+    margin: 16px 0 24px;
+  }
+  .noUi-horizontal .noUi-handle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: -15px;
+    &::after, &::before {
+      display: none;
+    }
+  }
+  .noUi-handle-lower {
+    right: -29px !important;
+  }
+  h4 {
+    padding-bottom: 10px;
+  }
+  
+
+}
+
+@keyframes slideIn {
+  from { right: -400px; }
+  to { right: 0; }
+}
+
+.filter-close {
+  font-size: 24px;
+  cursor: pointer;
+  float: right;
+}
+
+.apply-btn {
+  background: #7b341e;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.apply-btn:hover {
+  background: #5a2615;
+}
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.filter-close {
+  font-size: 26px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.filter-section {
+  margin-bottom: 25px;
+}
+
+.destination-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.destination-list li {
+  margin-bottom: 10px;
+}
+/* Slider Track */
+.noUi-target {
+  background: #eee;
+  border-radius: 6px;
+  height: 4px;
+  border: none;
+}
+
+/* Slider Filled Range */
+.noUi-connect {
+  background: #d75b38; /* your Figma red/orange */
+}
+
+/* Slider Handle */
+.noUi-handle {
+  width: 20px;
+  height: 20px;
+  top: -8px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #d75b38;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+
+/* Input Fields */
+.input-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.input-group input {
+  width: 80px;
+  padding: 6px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.input-group span {
+  font-size: 14px;
+  color: #555;
+}
+
+.trip-destination-search {
+  display: flex;
+  max-width: 940px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px 24px;
+  background: var(--zo-common-white);
+  box-shadow: 0px 6px 10px 0px #0000001A;
+  border-radius: 4px;
+}
+
+.trip-destination-select {
+  flex: 1;
+  border: 0;
+  width: 50%;
+  font-size: 16px;
+  background: #fff;
+  &:focus {
+    outline: none;
+  }
+}
+
+.trip-search-btn {
+  background: #8b2f1a;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 2px;
+  width: 50%;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.trip-search-btn:hover {
+  background: #6e2414;
+}
+
+.search-by-destination {
+  min-height: 80vh;
+  .button-wrapper {
+    text-align: center;
+    margin-top: 60px;
+  }
+}

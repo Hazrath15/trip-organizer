@@ -1,0 +1,80 @@
+
+// font url
+
+$font-url: 'https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&display=swap';
+$font-url2: 'https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap';
+
+// font family
+$font-family: (
+    ff: (
+        body: "'Inter', sans-serif",
+        heading: "'Inter', sans-serif",
+        menu: "'Inter', sans-serif",
+        button: "'Inter', sans-serif",
+    )
+);
+
+// font weight
+$font-scale: (
+    fw: (
+        normal: normal,
+        regular: 400,
+        medium: 500,
+        sbold: 600,
+        bold: 700,
+        heading: 700,
+        ebold: 800,
+        black: 900,
+    )
+);
+
+// font size
+$font-size: (
+    fz: (
+        body-1: 16px,
+        body-2: 14px,
+        h1: 48px,
+        h2: 36px,
+        h3: 32px ,
+        h4: 24px,
+        h5: 22px,
+        h6: 18px, 
+        button: 16px,
+    )
+);
+$font-size-tab: (
+    fz-tab: (
+        h1: 42px,
+        h2: 32px,
+        h3: 30px ,
+        h4: 22px,
+        h5: 20px,
+        h6: 16px, 
+    )
+);
+$font-size-mob: (
+    fz-mob: (
+        h1: 38px,
+        h2: 28px,
+        h3: 24px ,
+        h4: 22px,
+        h5: 20px,
+        h6: 16px, 
+    )
+);
+
+//Line Height
+
+$line-height: (
+    lh: (
+        body-1: 24px,
+        body-2: 20px,
+        h1: 1.2,
+        h2: 1.2,
+        h3: 1.2,
+        h4: 1.2,
+        h5: 28px,
+        h6: 28px, 
+        btn: 24px,
+    )
+);
