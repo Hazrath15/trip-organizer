@@ -99,7 +99,7 @@ class TRIPO_Heading extends \Elementor\Widget_Base {
                                 </svg>
 
                             </div>
-                            <h2 class="section-heading"><?php echo $settings['heading_text']; ?></h2>
+                            <h2 class="section-heading"><?php echo esc_html($settings['heading_text']); ?></h2>
                             <div class="svg">
                                 <svg width="171" height="49" viewBox="0 0 171 49" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">

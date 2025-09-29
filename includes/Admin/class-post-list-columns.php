@@ -15,8 +15,8 @@ if ( ! class_exists( 'TRIPO_Admin_Columns' ) ) {
             foreach ( $columns as $key => $value ) {
                 $new_columns[ $key ] = $value;
                 if ( 'title' === $key ) {
-                    $new_columns['duration']    = __( 'Duration (Days)', 'trip-organizer' );
-                    $new_columns['price']       = __( 'Price (SEK)', 'trip-organizer' );
+                    $new_columns['duration']    = esc_html__( 'Duration (Days)', 'trip-organizer' );
+                    $new_columns['price']       = esc_html__( 'Price (SEK)', 'trip-organizer' );
                 }
             }
             return $new_columns;
@@ -26,12 +26,12 @@ if ( ! class_exists( 'TRIPO_Admin_Columns' ) ) {
 
             if ( $column === 'duration' ) {
                 $duration = get_post_meta( $post_id, '_trip_duration', true );
-                echo $duration ? esc_html( $duration ) . ' ' . __( 'Days', 'trip-organizer' ) : __( '—', 'trip-organizer' );
+                echo $duration ? esc_html( $duration ) . ' ' . esc_html__( 'Days', 'trip-organizer' ) : esc_html__( '—', 'trip-organizer' );
             }
 
             if ( $column === 'price' ) {
                 $price = get_post_meta( $post_id, '_trip_price', true );
-                echo $price ? number_format( $price ) . ' ' . __( 'SEK', 'trip-organizer' ) : __( '—', 'trip-organizer' );
+                echo $price ? number_format( $price ) . ' ' . esc_html__( 'SEK', 'trip-organizer' ) : esc_html__( '—', 'trip-organizer' );
             }
         }
 

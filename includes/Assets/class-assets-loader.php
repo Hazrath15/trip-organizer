@@ -30,7 +30,7 @@ class TRIPO_Assets_Loader {
         );
         wp_enqueue_style(
             'nouislider-css',
-            'https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css',
+            plugin_dir_url( __FILE__ ) . '../../src/css/nouislider.min.css',
             [],
             '15.7.0'
         );
@@ -41,9 +41,9 @@ class TRIPO_Assets_Loader {
             '5.3.5',
             true
         );
-        wp_enqueue_script(
+         wp_enqueue_script(
             'nouislider-js',
-            'https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js',
+            plugin_dir_url( __FILE__ ) . '../../src/js/nouislider.min.js',
             [],
             '15.7.0',
             true

@@ -80,8 +80,8 @@
             
             <!-- Breadcrumb -->
             <nav class="breadcrumb">
-                <a href="<?php echo home_url(); ?>">Home</a> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path></svg>
-                <a href="<?php echo get_post_type_archive_link('trip'); ?>">Destination</a> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path></svg>
+                <a href="<?php echo esc_url(home_url()); ?>">Home</a> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path></svg>
+                <a href="<?php echo esc_url(get_post_type_archive_link('trip')); ?>">Destination</a> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"></path></svg>
                 <?php
                 $terms = get_the_terms( get_the_ID(), 'destination' );
                 if ( $terms && ! is_wp_error( $terms ) ) {
@@ -111,7 +111,7 @@
                         <?php echo esc_html( $duration ); ?> days/<?php echo esc_html( $duration-1 ); ?> nights incl. travel days
                     </p>
                     <p class="trip-price">
-                        From <span class="trip-price-value"><?php echo number_format( $price ); ?></span> <?php echo $currency; ?> per person
+                        From <span class="trip-price-value"><?php echo number_format( $price ); ?></span> <?php echo esc_html($currency); ?> per person
                     </p>
                     <a href="#contact" class="trip-contact-btn">
                         Contact us for travel suggestions

@@ -1,6 +1,5 @@
 === Trip Organizer ===
 Contributors: hazrathali
-Donate link: https://example.com
 Tags: trips, travel, tour, booking, trip management
 Requires at least: 5.8
 Tested up to: 6.8

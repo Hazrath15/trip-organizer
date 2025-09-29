@@ -14,12 +14,22 @@ class Search_By_Destination_Shortcode {
         ]);
 
         // Selected destination from query
-        $selected = isset($_GET['destination']) ? sanitize_text_field($_GET['destination']) : '';
+        $selected = '';
+
+        if ( isset( $_GET['trip_search_nonce'] ) 
+            && wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['trip_search_nonce'] ) ), 'trip_search_action' ) ) {
+
+            $selected = isset( $_GET['destination'] ) 
+                ? sanitize_text_field( wp_unslash( $_GET['destination'] ) ) 
+                : '';
+        }
+
         ?>
         <section class="content-area pt-50 pb-50 search-by-destination">
             <div class="team-archive">
                 <div class="container container-regular">
                     <form class="trip-destination-search" method="get">
+                        <?php wp_nonce_field( 'trip_search_action', 'trip_search_nonce' ); ?>
                         <select name="destination" class="trip-destination-select">
                             <option value="">Destinations</option>
                             <?php foreach ($destinations as $destination): ?>
@@ -84,7 +94,8 @@ class Search_By_Destination_Shortcode {
 
                                             <!-- Short Description -->
                                             <div class="trip-excerpt">
-                                                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                                                <?php $excerpt = get_the_excerpt(); ?>
+                                                <?php echo esc_html(mb_substr( $excerpt, 0, 120 ) . '...'); ?>
                                             </div>
 
                                             <a href="<?php the_permalink(); ?>" class="read-more-btn">Read more</a>

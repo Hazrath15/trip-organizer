@@ -25,19 +25,19 @@ if ( ! class_exists( 'TRIPO_Meta_Boxes' ) ) {
             $price    = get_post_meta( $post->ID, '_trip_price', true );
             ?>
             <p>
-                <label for="trip_duration"><strong><?php _e( 'Duration (Days)', 'trip-organizer' ); ?></strong></label><br>
+                <label for="trip_duration"><strong><?php esc_html_e( 'Duration (Days)', 'trip-organizer' ); ?></strong></label><br>
                 <input type="number" id="trip_duration" name="trip_duration" value="<?php echo esc_attr( $duration ); ?>" min="1" style="width:100px;">
             </p>
 
             <p>
-                <label for="trip_price"><strong><?php _e( 'Price (SEK)', 'trip-organizer' ); ?></strong></label><br>
+                <label for="trip_price"><strong><?php esc_html_e( 'Price (SEK)', 'trip-organizer' ); ?></strong></label><br>
                 <input type="number" id="trip_price" name="trip_price" value="<?php echo esc_attr( $price ); ?>" min="0" step="100" style="width:150px;">
             </p>
             <?php
         }
 
         public function save_trip_meta( $post_id ) {
-            if ( ! isset( $_POST['trip_meta_nonce'] ) || ! wp_verify_nonce( $_POST['trip_meta_nonce'], 'save_trip_meta' ) ) {
+            if ( ! isset( $_POST['trip_meta_nonce'] ) || ! wp_verify_nonce( sanitize_text_field(wp_unslash($_POST['trip_meta_nonce'])), 'save_trip_meta' ) ) {
                 return;
             }
 

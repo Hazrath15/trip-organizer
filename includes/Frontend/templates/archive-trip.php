@@ -102,7 +102,8 @@
 
                                         <!-- Short Description -->
                                         <div class="trip-excerpt">
-                                            <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                                            <?php $excerpt = get_the_excerpt(); ?>
+                                            <?php echo esc_html(mb_substr( $excerpt, 0, 120 ) . '...'); ?>
                                         </div>
 
                                         <a href="<?php the_permalink(); ?>" class="read-more-btn">Read more</a>

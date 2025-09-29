@@ -8,8 +8,11 @@ class Ajax_Action_Handler {
     function filter_trips_ajax() {
         check_ajax_referer('wp_rest', 'security'); // verify nonce
 
-        parse_str($_POST['data'], $form);
+        $form = [];
 
+        if ( isset( $_POST['data'] ) ) {
+            parse_str( wp_unslash( $_POST['data'] ), $form );
+        }
         $args = [
             'post_type'      => 'trip',
             'posts_per_page' => -1,
@@ -83,7 +86,8 @@ class Ajax_Action_Handler {
 
                             <!-- Short Description -->
                             <div class="trip-excerpt">
-                                <?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?>
+                                <?php $excerpt = get_the_excerpt(); ?>
+                                <?php echo esc_html(mb_substr( $excerpt, 0, 120 ) . '...'); ?>
                             </div>
 
                             <a href="<?php the_permalink(); ?>" class="read-more-btn">Read more</a>

@@ -45,10 +45,10 @@ class TRIPO_Timeline extends \Elementor\Widget_Base {
         ?>
         <section class="timeline-main-wrapper" style="background: url(<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/shape.png) no-repeat top center; background-size: contain;">
             <div class="left-side-shape ">
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/left-cruve.png';?>" alt="left curve">
+                <img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/img/left-cruve.png';?>" alt="left curve">
             </div>
             <div class="right-side-shape ">
-                <img src="<?php echo get_template_directory_uri() . '/assets/img/right-curve.png';?>" alt="left curve">
+                <img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/img/right-curve.png';?>" alt="left curve">
             </div>
 
             <div class="timeline custom-container">
@@ -74,12 +74,12 @@ class TRIPO_Timeline extends \Elementor\Widget_Base {
                         </span>
                     </div>
                     <div class="empty right">
-                        <img src="<?php echo get_template_directory_uri() . '/assets/img/single-img.png';?> " alt="Smartcards">
+                        <img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/img/single-img.png';?> " alt="Smartcards">
                     </div>
                 </div>
 
                 <div class="timeline-item" id="step2">
-                    <div class="empty left"> <img src="<?php echo get_template_directory_uri() . '/assets/img/single-img.png';?>" alt="Posters"></div>
+                    <div class="empty left"> <img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/img/single-img.png';?>" alt="Posters"></div>
                     <div class="circle"><span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -118,10 +118,10 @@ class TRIPO_Timeline extends \Elementor\Widget_Base {
                                     stroke="#001420" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </span></div>
-                    <div class="empty right"><img src="<?php echo get_template_directory_uri() . '/assets/img/single-img.png';?>" alt="Labels"></div>
+                    <div class="empty right"><img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/img/single-img.png';?>" alt="Labels"></div>
                 </div>
                 <div class="timeline-item" id="step4">
-                    <div class="empty left"> <img src="<?php echo get_template_directory_uri() . '/assets/img/single-img.png';?>" alt="Posters"></div>
+                    <div class="empty left"> <img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/img/single-img.png';?>" alt="Posters"></div>
                     <div class="circle"><span><svg width="14" height="14" viewBox="0 0 14 14" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -163,7 +163,7 @@ class TRIPO_Timeline extends \Elementor\Widget_Base {
                                     stroke="#001420" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
                         </span></div>
-                    <div class="empty right"><img src="<?php echo get_template_directory_uri() . '/assets/img/single-img.png'; ?>" alt="Labels"></div>
+                    <div class="empty right"><img src="<?php echo esc_url(get_template_directory_uri()) . '/assets/img/single-img.png'; ?>" alt="Labels"></div>
                 </div>
 
             </div>
